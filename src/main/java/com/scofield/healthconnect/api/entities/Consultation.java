@@ -1,6 +1,6 @@
 package com.scofield.healthconnect.api.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,8 @@ public class Consultation {
 	private Patient patient;
 	@ManyToOne
 	private Doctor doctor;
-	private LocalDate dateTime;
+	private LocalDateTime dateTime;
+	
 	public Long getId() {
 		return id;
 	}
@@ -33,10 +34,10 @@ public class Consultation {
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
-	public LocalDate getDateTime() {
+	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
-	public void setDateTime(LocalDate dateTime) {
+	public void setDateTime(LocalDateTime dateTime) {
 		this.dateTime = dateTime;
 	}
 }

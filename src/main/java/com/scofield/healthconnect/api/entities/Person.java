@@ -1,6 +1,7 @@
 package com.scofield.healthconnect.api.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,10 +14,12 @@ public class Person {
 	private Long id;
 	@Column(nullable = false)
 	private String name;
+	@Column(unique = true, nullable = false)
+	private String email;
 	@Column(length = 11, nullable = false)
 	private String phone;
-	@Column(nullable = false)
-	private String address;
+	@Embedded
+	private Address address;
 	
 	public Long getId() {
 		return id;
@@ -42,11 +45,11 @@ public class Person {
 		this.phone = phone;
 	}
 	
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 	
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	

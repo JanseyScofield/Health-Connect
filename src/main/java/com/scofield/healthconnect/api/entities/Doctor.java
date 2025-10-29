@@ -20,6 +20,7 @@ public class Doctor {
 	private String crm;
 	@Enumerated(EnumType.STRING)
     private Specialty categoria;
+	private Boolean active = true;
 	
 	public Long getId() {
 		return id;
@@ -42,4 +43,11 @@ public class Doctor {
 	public void setCategoria(Specialty categoria) {
 		this.categoria = categoria;
 	}
+	public Boolean getActive() {
+		return this.active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 }

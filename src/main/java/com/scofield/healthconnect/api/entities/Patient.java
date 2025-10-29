@@ -16,6 +16,7 @@ public class Patient {
 	private Person person;
 	@Column(length = 11, nullable = false)
 	private String cpf;
+	private Boolean active = true;
 	
 	public Long getId() {
 		return id;
@@ -31,5 +32,11 @@ public class Patient {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	public Boolean getActive() {
+		return this.active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 }
